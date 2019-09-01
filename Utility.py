@@ -1,4 +1,7 @@
 # motore di salvataggio
+from typing import Any
+
+
 def saving_crea():
     try:
         saving = open("saving.txt", "w")
