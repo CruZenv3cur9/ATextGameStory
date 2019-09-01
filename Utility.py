@@ -7,10 +7,10 @@ def saving_crea():
     saving.close()
 
 def saving():  # TODO load data to file
-    global salvataggio_progressi
+    salvataggio_progressi = []
     saving = open ("saving.txt", "w")
     saving.write(str(salvataggio_progressi))
     saving.close()
-    print("")
+    print("SV-OK")
     return saving
 
