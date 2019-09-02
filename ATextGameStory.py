@@ -1,5 +1,5 @@
 import time, sys, os, pickle
-import simpleaudio
+
 import pygame
 
 # motore di salvataggio
