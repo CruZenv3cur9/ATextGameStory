@@ -13,9 +13,6 @@ salvataggio_progressi = list(lettura2.split(","))
 lettura.close()
 Utility.saving()
 
-# Capitolo 1 start
-Capitolo_1.scena1()
-
 
 # INIZIO DEL SECONDO EPISODIO
 def scena2():
@@ -94,7 +91,7 @@ def menù():
     if comando == "2":
         sys.exit(0)
     elif comando == "3":
-        scena1()
+        Capitolo_1.scena1()
     elif comando == " ":
         menù()
     elif comando == "4":
@@ -135,7 +132,7 @@ def menù():
 
         collegamento = input("premi invio per procedere all' episodio successivo")
         if collegamento == "":
-            scena1()
+            Capitolo_1.scena1()
 
 
 # MENU richiamo della funzione
