@@ -1,5 +1,4 @@
 import time, sys, os, pickle
-
 import pygame
 import Utility
 # motore di salvataggio
@@ -48,25 +47,15 @@ def scena1():
     # aggiunta del valore 1
     global salvataggio_progressi
     Utility.saving_crea()
+    Utility.saving_aggiungi()
+    # richiamo motore di saving
+    Utility.saving()
+    domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 
-
-    if "1" in salvataggio_progressi :
-        domanda = input("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
-        if domanda == "1":
-            scena2()
-        # richiamo menu
-        else:
-            menù()
+    if domanda == "1":
+        scena2()
     else:
-        Utility.saving_aggingi()
-        # richiamo motore di saving
-        Utility.saving()
-        domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
-
-        if domanda == "1":
-            scena2()
-        else:
-            menù()
+        menù()
 
 
 # INIZIO DEL SECONDO EPISODIO

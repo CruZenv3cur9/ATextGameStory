@@ -1,9 +1,5 @@
 import atextgamestory
 
-
-
-
-
 # motore di salvataggio
 salvataggio_progressi = []
 def saving_crea():
@@ -20,8 +16,8 @@ def saving():
     saving.close()
     print("SV-OK")
     return saving
-def saving_aggingi():
-    global savataggio_progressi
+def saving_aggiungi():
+    global salvataggio_progressi
 
     if "1" in salvataggio_progressi :
         domanda = input("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
