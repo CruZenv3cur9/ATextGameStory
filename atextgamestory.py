@@ -149,8 +149,10 @@ def menù():
             Utility.saving_crea()
             Utility.saving()
             countdown = 5
-            while countdown <= 0:
-                print("tornerai al menù principale tra " + countdown + " secondi")
+            print("")
+            while countdown != 0:
+                print("tornerai al menù principale tra " + str(countdown) + " secondi")
+                countdown -= 1
                 time.sleep(1)
             menù()
         else:
