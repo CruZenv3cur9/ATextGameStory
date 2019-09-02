@@ -4,12 +4,7 @@ import Utility
 # motore di salvataggio
 
 Utility.saving_crea()
-# LISTE  GLOBALI
-progressi_scena1 = ["1"]
-lettura  = open("saving.txt", "r")
-lettura2 = str(lettura.read())
-salvataggio_progressi = list(lettura2.split(","))
-lettura.close()
+Utility.saving_load()
 Utility.saving()
 
     # INIZIO DEL PRIMO EPISODIO   (prima scena)
@@ -26,7 +21,7 @@ def scena1():
     frase1 = (
         "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\EPISODIO 1\n\n\ni tuoi occhi si aprono a fatica.......... \ncome se non li aprissi da anni......\nti senti stanco..... assonnato... e  non sai dove ti trovi............ \npercepisci che l'ambiente intorno a te è grande............ "
         "\nquando qualcosa inizia a fare del rumore...... \n"
-        "lo senti che si avvicina \ncorrendo .......... \n inizi a sentire il suo respiro \n"
+        "lo senti che si avvicina \ncorrendo .......... \ninizi a sentire il suo respiro \n"
         "percepisci che è vicino  \nmolto vicino..... con uno scatto involontario balzi indietro \n"
         "urti con il braccio destro un oggetto solido \ndi forma cubica, spigolosa \n"
         "l'animale indietreggia quasi come se fosse lui più spaventato di te \n"
@@ -47,7 +42,10 @@ def scena1():
     # aggiunta del valore 1
     global salvataggio_progressi
     Utility.saving_crea()
+    Utility.saving()
+    Utility.saving_load()
     Utility.saving_aggiungi()
+
     # richiamo motore di saving
     Utility.saving()
     domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")

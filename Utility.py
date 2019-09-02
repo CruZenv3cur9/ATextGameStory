@@ -19,7 +19,7 @@ def saving():
 def saving_aggiungi():
     global salvataggio_progressi
 
-    if "1" in salvataggio_progressi :
+    if "1" in salvataggio_progressi == True:
         domanda = input("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
         if domanda == "1":
             atextgamestory.scena2()
@@ -37,9 +37,12 @@ def saving_aggiungi():
             atextgamestory.scena2()
         else:
             atextgamestory.menù()
-
-
-
-
+def saving_load():
+    progressi_scena1 = ["1"]
+    lettura = open ("saving.txt", "r")
+    lettura2 = str (lettura.read ())
+    global salvataggio_progressi
+    salvataggio_progressi = list (lettura2.split (","))
+    lettura.close ()
 
 #SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
