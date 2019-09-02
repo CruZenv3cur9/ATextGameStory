@@ -1,46 +1,24 @@
 import time, sys, os, pickle
 
 import pygame
-
+import Utility
 # motore di salvataggio
-def saving_crea():
-    try:
-        saving = open("saving.txt", "w")
-    except:
-        saving = open("saving.txt", "x")
-    saving.close()
 
-def saving():  # TODO load data to file
-    global salvataggio_progressi
-    try:
-        saving = open("saving.txt", "w")
-    except:
-        saving = open("saving.txt", "x")
-    saving.write(str(salvataggio_progressi))
-    saving.close()
-    return saving
-    print("\n\n\nSV-OK")
-
-
-#creazione saving
-#creazione_file = open("saving.txt", "w")
-#creazione_file.close()
-saving_crea()
+Utility.saving_crea()
 # LISTE  GLOBALI
 progressi_scena1 = ["1"]
 lettura  = open("saving.txt", "r")
 lettura2 = str(lettura.read())
 salvataggio_progressi = list(lettura2.split(","))
 lettura.close()
-saving()
-
+Utility.saving()
 
     # INIZIO DEL PRIMO EPISODIO   (prima scena)
 
 # INIZIO DEL PRIMO EPISODIO
 def scena1():
     #starting del file audio
-    file = 'Pisciobbello.mp3'
+    file = 'Piscio.mp3'
     pygame.mixer.init()
     pygame.mixer.music.load(file)
     pygame.mixer.music.play()
@@ -69,7 +47,7 @@ def scena1():
         time.sleep(0.07)
     # aggiunta del valore 1
     global salvataggio_progressi
-
+    Utility.saving_crea()
 
 
     if "1" in salvataggio_progressi :
@@ -82,12 +60,13 @@ def scena1():
     else:
         salvataggio_progressi.append("1")
         # richiamo motore di saving
-        saving()
+        Utility.saving()
         domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 
         if domanda == "1":
             scena2 ()
-
+        else:
+            menù()
 
 
 # INIZIO DEL SECONDO EPISODIO
