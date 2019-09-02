@@ -1,4 +1,5 @@
-import
+import atextgamestory
+
 
 
 
@@ -25,10 +26,10 @@ def saving_aggingi():
     if "1" in salvataggio_progressi :
         domanda = input("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
         if domanda == "1":
-            scena2()
+            atextgamestory.scena2()
         # richiamo menu
         else:
-            menù()
+            atextgamestory.menù()
     else:
         salvataggio_progressi.append("1")
 
@@ -37,11 +38,11 @@ def saving_aggingi():
         domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 
         if domanda == "1":
-            scena2()
+            atextgamestory.scena2()
         else:
-            menù()
+            atextgamestory.menù()
 
-    salvataggio_progressi.append("1")
+
 
 
 
