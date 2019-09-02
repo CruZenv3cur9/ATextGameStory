@@ -77,24 +77,24 @@ for char in titolo:
 def menù():
     print("\n\n\n\n\n                                                   MENÚ")
     time.sleep(0.2)
-    print("            <1                            <GIOCA>                      ")
+    print("            <G                            <GIOCA>                      ")
     time.sleep(0.2)
-    print("            <2                            <ESCI>                       ")
+    print("            <E                            <ESCI>                       ")
     time.sleep(0.5)
-    print("            <3                           <EPISODIO-1>                     ")
-    print("            <4                           <EPISODIO-2>                     ")
+    print("            <1                           <EPISODIO-1>                     ")
+    print("            <2                           <EPISODIO-2>                     ")
     print("\n            <999                         <ELIMINA DATI DI SALVATAGGIO>                 ")
     print("#####################################################################################################################################################################################################################\n")
 
     # MENU variabile di inserimento comando a opzioni numeriche
     comando = input("")
-    if comando == "2":
+    if comando == "E":
         sys.exit(0)
-    elif comando == "3":
+    elif comando == "1":
         Capitolo_1.scena1()
     elif comando == " ":
         menù()
-    elif comando == "4":
+    elif comando == "2":
         scena2()
    # Cancellazione dati
     elif comando == "999":
@@ -115,7 +115,7 @@ def menù():
             menù()
 
         # inizio del gioco (scena introduttiva)
-    elif comando == "1":
+    elif comando == "G":
         print("")
         print("")
         print("                   COMUNICAZIONE DI SERVIZIO")
