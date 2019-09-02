@@ -119,9 +119,7 @@ for char in titolo:
 # MENU di gioco
 
 def menù():
-    print("")
-    print("")
-    print("\n\n\n                                                            MENÚ")
+    print("\n\n\n\n\n                                                   MENÚ")
     time.sleep(0.2)
     print("            <1                            <GIOCA>                      ")
     time.sleep(0.2)
@@ -148,7 +146,13 @@ def menù():
         if comando2 == "Si":
             os.remove("saving.txt")
             print("\n\nDATI RIMOSSI CON SUCCESSO!")
-
+            Utility.saving_crea()
+            Utility.saving()
+            countdown = 5
+            while countdown <= 0:
+                print("tornerai al menù principale tra " + countdown + " secondi")
+                time.sleep(1)
+            menù()
         else:
             menù()
 
