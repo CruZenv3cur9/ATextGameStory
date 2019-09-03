@@ -25,7 +25,15 @@ def scena2():
             sys.stdout.flush()
             time.sleep(0.1)
     else:
-        print("prima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
+        print("\nprima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
+        #countdown
+        countdown = 3
+        print("")
+        time.sleep(2)
+        while countdown != 0:
+            print("tornerai al menù principale tra " + str(countdown) + " secondi")
+            countdown -= 1
+            time.sleep(1)
         menù()
 
 
@@ -104,8 +112,10 @@ def menù():
             print("\n\nDATI RIMOSSI CON SUCCESSO!")
             Utility.saving_crea()
             Utility.saving()
-            countdown = 5
+            #countdown
+            countdown = 3
             print("")
+            time.sleep(2)
             while countdown != 0:
                 print("tornerai al menù principale tra " + str(countdown) + " secondi")
                 countdown -= 1

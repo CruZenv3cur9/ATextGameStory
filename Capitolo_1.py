@@ -16,7 +16,7 @@ def scena1():
     frase1 = (
         "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\EPISODIO 1\n\n\ni tuoi occhi si aprono a fatica.......... \ncome se non li aprissi da anni......\nti senti stanco..... assonnato... e  non sai dove ti trovi............ \npercepisci che l'ambiente intorno a te è grande............ "
         "\nquando qualcosa inizia a fare del rumore...... \n"
-        "lo senti che si avvicina \ncorrendo .......... \n inizi a sentire il suo respiro \n"
+        "lo senti che si avvicina \ncorrendo .......... \ninizi a sentire il suo respiro \n"
         "percepisci che è vicino  \nmolto vicino..... con uno scatto involontario balzi indietro \n"
         "urti con il braccio destro un oggetto solido \ndi forma cubica, spigolosa \n"
         "l'animale indietreggia quasi come se fosse lui più spaventato di te \n"
@@ -25,9 +25,9 @@ def scena1():
         "agile e veloce si preda principalmente di piccoli animali \n"
         "a quel punto per istinto allunghi la mano in un gesto amichevole verso la creatura \n"
         "lui struscia quello che sembra il suo muso sul tuo arto \n"
-        "così come per magia la tua mente si dimentica……..\n "
+        "così come per magia la tua mente si dimentica........\n "
         "di ogni cosa, di ogni dubbio, paura, insicurezza \n"
-        "così per un momento la tua vita diviene magnifica…………………\n ")
+        "così per un momento la tua vita diviene magnifica.....................\n ")
     # modulo di scrittura
 
     for char in frase1:
