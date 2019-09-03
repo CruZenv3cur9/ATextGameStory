@@ -35,12 +35,13 @@ def saving_aggiungi():
         domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 
         if domanda == "1":
-            atextgamestory.scena2()
+            Capitolo_2.scena2()
         else:
             atextgamestory.menù()
 def continuer():
     global salvataggio_progressi
     if "1" in salvataggio_progressi:
+        Capitolo_2.controllo += 1
         Capitolo_2.scena2()
     else:
         print("\nprima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
