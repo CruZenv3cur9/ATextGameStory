@@ -1,5 +1,6 @@
 import atextgamestory, sys, time, Capitolo_2
-
+import os.path
+from os import path
 
 
 
@@ -7,11 +8,11 @@ import atextgamestory, sys, time, Capitolo_2
 # motore di salvataggio
 salvataggio_progressi = []
 def saving_crea():
-    try:
-        saving = open("saving.txt", "w")
-    except:
+    if path.exists("saving.txt") == True:
+       print()
+    else:
         saving = open("saving.txt", "x")
-    saving.close()
+        saving.close()
 # METTERE A POSTO STA ROBA
 def saving():
     saving = open("saving.txt", "w")
