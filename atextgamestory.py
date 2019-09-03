@@ -1,42 +1,11 @@
 import time, sys, os, pickle
 import pygame
 import Utility
-import Capitolo_1 
+import Capitolo_1
+import Capitolo_2
 # motore di salvataggio
 
 Utility.saving_crea()
-# LISTE  GLOBALI
-progressi_scena1 = ["1"]
-lettura  = open("saving.txt", "r")
-lettura2 = str(lettura.read())
-salvataggio_progressi = list(lettura2.split(","))
-lettura.close()
-Utility.saving()
-
-
-# INIZIO DEL SECONDO EPISODIO
-def scena2():
-    global salvataggio_progressi
-    if "1" in salvataggio_progressi:
-        frase1 = "ciaoooooo"
-        # writing
-        for char in frase1:
-            sys.stdout.write(char)
-            sys.stdout.flush()
-            time.sleep(0.1)
-    else:
-        print("\nprima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
-        #countdown
-        countdown = 3
-        print("")
-        time.sleep(2)
-        while countdown != 0:
-            print("tornerai al menù principale tra " + str(countdown) + " secondi")
-            countdown -= 1
-            time.sleep(1)
-        menù()
-
-
 # STARTUP
 
 
@@ -103,7 +72,7 @@ def menù():
     elif comando == " ":
         menù()
     elif comando == "2":
-        scena2()
+        Capitolo_2.scena2()
    # Cancellazione dati
     elif comando == "999":
         comando2 = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
