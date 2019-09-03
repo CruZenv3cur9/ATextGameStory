@@ -2,9 +2,6 @@ import atextgamestory, sys, time, Capitolo_2
 import os.path
 from os import path
 
-
-
-
 # motore di salvataggio
 salvataggio_progressi = []
 def saving_crea():
@@ -26,10 +23,10 @@ def saving_aggiungi():
     if "1" in salvataggio_progressi :
         domanda = input("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
         if domanda == "1":
-            atextgamestory.scena2()
+            Capitolo_2.scena2()
         # richiamo menu
         else:
-            atextgamestory.menù()
+            Capitolo_2.menù()
     else:
         salvataggio_progressi.append("1")
 
