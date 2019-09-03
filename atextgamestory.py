@@ -1,76 +1,11 @@
 import time, sys, os, pickle
 import pygame
 import Utility
+import Capitolo_1
+import Capitolo_2
 # motore di salvataggio
 
 Utility.saving_crea()
-Utility.saving_load()
-Utility.saving()
-
-    # INIZIO DEL PRIMO EPISODIO   (prima scena)
-
-# INIZIO DEL PRIMO EPISODIO
-def scena1():
-    #starting del file audio
-    file = 'Piscio.mp3'
-    pygame.mixer.init()
-    pygame.mixer.music.load(file)
-    pygame.mixer.music.play()
-    time.sleep(0.5)
-    #starting della prima frase
-    frase1 = (
-        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\EPISODIO 1\n\n\ni tuoi occhi si aprono a fatica.......... \ncome se non li aprissi da anni......\nti senti stanco..... assonnato... e  non sai dove ti trovi............ \npercepisci che l'ambiente intorno a te è grande............ "
-        "\nquando qualcosa inizia a fare del rumore...... \n"
-        "lo senti che si avvicina \ncorrendo .......... \ninizi a sentire il suo respiro \n"
-        "percepisci che è vicino  \nmolto vicino..... con uno scatto involontario balzi indietro \n"
-        "urti con il braccio destro un oggetto solido \ndi forma cubica, spigolosa \n"
-        "l'animale indietreggia quasi come se fosse lui più spaventato di te \n"
-        "e proprio in quel momento una voce metallica inizia a parlare alla tua destra \n"
-        "dice :'nome dell'animale, pacifico, età 3 anni, un piccolo quadrupede simile ad un gatto, pelo schiumoso e leggermente pennato,\n"
-        "agile e veloce si preda principalmente di piccoli animali \n"
-        "a quel punto per istinto allunghi la mano in un gesto amichevole verso la creatura \n"
-        "lui struscia quello che sembra il suo muso sul tuo arto \n"
-        "così come per magia la tua mente si dimentica……..\n "
-        "di ogni cosa, di ogni dubbio, paura, insicurezza \n"
-        "così per un momento la tua vita diviene magnifica…………………\n ")
-    # modulo di scrittura
-
-    for char in frase1:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.07)
-    # aggiunta del valore 1
-    global salvataggio_progressi
-    Utility.saving_crea()
-    Utility.saving()
-    Utility.saving_load()
-    Utility.saving_aggiungi()
-
-    # richiamo motore di saving
-    Utility.saving()
-    domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
-
-    if domanda == "1":
-        scena2()
-    else:
-        menù()
-
-
-# INIZIO DEL SECONDO EPISODIO
-def scena2():
-    global salvataggio_progressi
-    if "1" in salvataggio_progressi:
-        frase1 = "ciaoooooo"
-        # writing
-        for char in frase1:
-            sys.stdout.write(char)
-            sys.stdout.flush()
-            time.sleep(0.1)
-    else:
-        print("prima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
-        menù()
-
-
 # STARTUP
 
 
@@ -117,41 +52,49 @@ for char in titolo:
 # MENU di gioco
 
 def menù():
-    print("")
-    print("")
-    print("\n\n\n                                                            MENÚ")
+    print("\n\n\n\n\n                                                   MENÚ")
     time.sleep(0.2)
-    print("            <1                            <GIOCA>                      ")
+    print("            <G                            <GIOCA>                      ")
     time.sleep(0.2)
-    print("            <2                            <ESCI>                       ")
+    print("            <E                            <ESCI>                       ")
     time.sleep(0.5)
-    print("            <3                           <EPISODIO-1>                     ")
-    print("            <4                           <EPISODIO-2>                     ")
+    print("            <1                           <EPISODIO-1>                     ")
+    print("            <2                           <EPISODIO-2>                     ")
     print("\n            <999                         <ELIMINA DATI DI SALVATAGGIO>                 ")
     print("#####################################################################################################################################################################################################################\n")
 
     # MENU variabile di inserimento comando a opzioni numeriche
     comando = input("")
-    if comando == "2":
+    if comando == "E":
         sys.exit(0)
-    elif comando == "3":
-        scena1()
+    elif comando == "1":
+        Capitolo_1.scena1()
     elif comando == " ":
         menù()
-    elif comando == "4":
-        scena2()
+    elif comando == "2":
+        Capitolo_2.scena2()
    # Cancellazione dati
     elif comando == "999":
         comando2 = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
-        if comando2 == "Si":
+        if comando2 == "Si" or "si" or "SI":
             os.remove("saving.txt")
             print("\n\nDATI RIMOSSI CON SUCCESSO!")
-
+            Utility.saving_crea()
+            Utility.saving()
+            #countdown
+            countdown = 3
+            print("")
+            time.sleep(2)
+            while countdown != 0:
+                print("tornerai al menù principale tra " + str(countdown) + " secondi")
+                countdown -= 1
+                time.sleep(1)
+            menù()
         else:
             menù()
 
         # inizio del gioco (scena introduttiva)
-    elif comando == "1":
+    elif comando == "G":
         print("")
         print("")
         print("                   COMUNICAZIONE DI SERVIZIO")
@@ -168,7 +111,7 @@ def menù():
 
         collegamento = input("premi invio per procedere all' episodio successivo")
         if collegamento == "":
-            scena1()
+            Capitolo_1.scena1()
 
 
 # MENU richiamo della funzione

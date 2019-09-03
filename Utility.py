@@ -1,16 +1,20 @@
-import atextgamestory
+import atextgamestory, sys, time, Capitolo_2
+import os.path
+from os import path
+
+
+
 
 # motore di salvataggio
 salvataggio_progressi = []
 def saving_crea():
-    try:
-        saving = open("saving.txt", "w")
-    except:
+    if path.exists("saving.txt") == True:
+       print()
+    else:
         saving = open("saving.txt", "x")
-    saving.close()
+        saving.close()
 # METTERE A POSTO STA ROBA
 def saving():
-    salvataggio_progressi = []
     saving = open("saving.txt", "w")
     saving.write(str(salvataggio_progressi))
     saving.close()
@@ -19,7 +23,7 @@ def saving():
 def saving_aggiungi():
     global salvataggio_progressi
 
-    if "1" in salvataggio_progressi == True:
+    if "1" in salvataggio_progressi :
         domanda = input("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
         if domanda == "1":
             atextgamestory.scena2()
@@ -37,12 +41,20 @@ def saving_aggiungi():
             atextgamestory.scena2()
         else:
             atextgamestory.menù()
-def saving_load():
-    progressi_scena1 = ["1"]
-    lettura = open ("saving.txt", "r")
-    lettura2 = str (lettura.read ())
+def continuer():
     global salvataggio_progressi
-    salvataggio_progressi = list (lettura2.split (","))
-    lettura.close ()
+    if "1" in salvataggio_progressi:
+        Capitolo_2.scena2()
+    else:
+        print("\nprima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
+        #countdown
+        countdown = 3
+        print("")
+        time.sleep(2)
+        while countdown != 0:
+            print("tornerai al menù principale tra " + str(countdown) + " secondi")
+            countdown -= 1
+            time.sleep(1)
+        atextgamestory.menù()
 
 #SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
