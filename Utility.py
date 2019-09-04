@@ -3,7 +3,8 @@ import os.path
 from os import path
 
 # motore di salvataggio
-salvataggio_progressi = []
+
+salvataggio_progressi = valore_loader
 def saving_crea():
     if path.exists("saving.txt") == True:
        print()
@@ -26,7 +27,7 @@ def saving_aggiungi():
             Capitolo_2.scena2()
         # richiamo menu
         else:
-            Capitolo_2.menù()
+            atextgamestory.menù()
     else:
         salvataggio_progressi.append("1")
 
@@ -54,5 +55,10 @@ def continuer():
             countdown -= 1
             time.sleep(1)
         atextgamestory.menù()
-
-#SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
+def saving_loader():
+    global salvataggio_progressi
+    global valore_loader
+    loader = open("saving.txt", "r")
+    valore_loader = str(loader.read())
+    
+    loader.close()

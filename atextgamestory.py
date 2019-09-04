@@ -4,7 +4,7 @@ import Utility
 import Capitolo_1
 import Capitolo_2
 # motore di salvataggio
-
+Utility.saving_loader()
 Utility.saving_crea()
 # STARTUP
 
