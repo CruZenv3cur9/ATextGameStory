@@ -26,7 +26,7 @@ def saving_aggiungi():
             Capitolo_2.scena2()
         # richiamo menu
         else:
-            Capitolo_2.menù()
+            atextgamestory.menù()
     else:
         salvataggio_progressi.append("1")
 

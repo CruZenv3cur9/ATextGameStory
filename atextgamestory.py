@@ -68,8 +68,6 @@ def menù():
         sys.exit(0)
     elif comando == "1":
         Capitolo_1.scena1()
-    elif comando == " ":
-        menù()
     elif comando == "2":
         Capitolo_2.scena2()
    # Cancellazione dati
@@ -112,6 +110,26 @@ def menù():
         if collegamento == "":
             Capitolo_1.scena1()
 
+    else:
+        print("\nSi è verificato un problema!\n\n")
+        print('''          _ ._  _ , _ ._
+        (_ ' ( `  )_  .__)
+      ( (  (    )   `)  ) _)
+     (__ (_   (_ . _) _) ,__)
+         `~~`\ ' . /`~~`
+              ;   ;
+              /   \ 
+_____________/_ __ \_____________\n''')
+
+        # countdown
+        countdown = 3
+        print("")
+        time.sleep(2)
+        while countdown != 0:
+            print("tornerai al menù principale tra " + str(countdown) + " secondi")
+            countdown -= 1
+            time.sleep(1)
+        menù()
 
 # MENU richiamo della funzione
 menù()
