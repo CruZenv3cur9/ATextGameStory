@@ -7,11 +7,11 @@ import atextgamestory, Utility, pygame, time, sys
 # INIZIO DEL PRIMO EPISODIO
 def scena1():
     #starting del file audio
-    file = 'Piscio.mp3'
-    pygame.mixer.init()
-    pygame.mixer.music.load(file)
-    pygame.mixer.music.play()
-    time.sleep(0.5)
+    #file = 'Piscio.mp3'
+    #pygame.mixer.init()
+    #pygame.mixer.music.load(file)
+    #pygame.mixer.music.play()
+    #time.sleep(0.5)
     #starting della prima frase
     frase1 = (
         "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\EPISODIO 1\n\n\ni tuoi occhi si aprono a fatica.......... \ncome se non li aprissi da anni......\nti senti stanco..... assonnato... e  non sai dove ti trovi............ \npercepisci che l'ambiente intorno a te è grande............ "
@@ -33,7 +33,7 @@ def scena1():
     for char in frase1:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.07)
+        time.sleep(0.007)
     # aggiunta del valore 1
     global salvataggio_progressi
     Utility.saving_crea()

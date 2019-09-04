@@ -2,7 +2,6 @@ import atextgamestory, sys, time, Capitolo_2
 import os.path
 from os import path
 
-
 # motore di salvataggio
 salvataggio_progressi = []
 def saving_crea():
@@ -11,7 +10,7 @@ def saving_crea():
     else:
         saving = open("saving.txt", "x")
         saving.close()
-
+# METTERE A POSTO STA ROBA
 def saving():
     saving = open("saving.txt", "w")
     saving.write(str(salvataggio_progressi))
@@ -27,7 +26,7 @@ def saving_aggiungi():
             Capitolo_2.scena2()
         # richiamo menu
         else:
-            atextgamestory.menù()
+            Capitolo_2.menù()
     else:
         salvataggio_progressi.append("1")
 
@@ -56,3 +55,4 @@ def continuer():
             time.sleep(1)
         atextgamestory.menù()
 
+#SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
