@@ -36,9 +36,7 @@ def scena1():
         time.sleep(0.007)
     # aggiunta del valore 1
     global salvataggio_progressi
-    Utility.saving_crea()
-    Utility.saving_aggiungi()
-    # richiamo motore di saving
+        # richiamo motore di saving
     Utility.saving()
     domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 

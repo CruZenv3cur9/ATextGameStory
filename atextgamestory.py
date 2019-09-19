@@ -6,6 +6,8 @@ import Capitolo_2
 # motore di salvataggio
 
 Utility.saving_crea()
+#Utility.chapter_level()
+
 # STARTUP
 
 print("#######################################################################################################################################################################################################")
@@ -63,21 +65,22 @@ def menu():
     print("#####################################################################################################################################################################################################################\n")
 
     # MENU variabile di inserimento comando a opzioni numeriche
+    global comando
     comando = input("")
     if comando == "E":
         sys.exit(0)
     elif comando == "1":
         Capitolo_1.scena1()
     elif comando == "2":
-        Capitolo_2.scena2()
+        Utility.chapter_level()
+        #Capitolo_2.scena2()
    # Cancellazione dati
     elif comando == "999":
-        comando2 = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
-        if comando2 == "Si" or "si" or "SI":
+        delete = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
+        if delete == "Si" or "si" or "SI":
             os.remove("saving.txt")
             print("\n\nDATI RIMOSSI CON SUCCESSO!")
             Utility.saving_crea()
-            Utility.saving()
             #countdown
             countdown = 3
             print("")
