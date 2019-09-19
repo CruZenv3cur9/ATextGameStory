@@ -1,5 +1,5 @@
 import atextgamestory, Utility, pygame, time, sys
-
+import Capitolo_2
 
 
 # INIZIO DEL PRIMO EPISODIO   (prima scena)
@@ -43,6 +43,6 @@ def scena1():
     domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 
     if domanda == "1":
-        atextgamestory.scena2()
+        Capitolo_2.scena2()
     else:
-        atextgamestory.menù()
+        atextgamestory.menu()

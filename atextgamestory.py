@@ -50,7 +50,7 @@ for char in titolo:
 
 # MENU di gioco
 
-def menù():
+def menu():
     print("\n\n\n\n\n                                                   MENÚ")
     time.sleep(0.2)
     print("            <G                            <GIOCA>                      ")
@@ -86,9 +86,9 @@ def menù():
                 print("tornerai al menù principale tra " + str(countdown) + " secondi")
                 countdown -= 1
                 time.sleep(1)
-            menù()
+            menu()
         else:
-            menù()
+            menu()
 
         # inizio del gioco (scena introduttiva)
     elif comando == "G":
@@ -129,7 +129,7 @@ _____________/_ __ \_____________\n''')
             print("tornerai al menù principale tra " + str(countdown) + " secondi")
             countdown -= 1
             time.sleep(1)
-        menù()
+        menu()
 
 # MENU richiamo della funzione
-menù()
+menu()

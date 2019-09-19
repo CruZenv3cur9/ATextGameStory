@@ -26,7 +26,7 @@ def saving_aggiungi():
             Capitolo_2.scena2()
         # richiamo menu
         else:
-            atextgamestory.menù()
+            atextgamestory.menu()
     else:
         salvataggio_progressi.append("1")
 
@@ -37,7 +37,7 @@ def saving_aggiungi():
         if domanda == "1":
             Capitolo_2.scena2()
         else:
-            atextgamestory.menù()
+            atextgamestory.menu()
 def continuer():
     global salvataggio_progressi
     if "1" in salvataggio_progressi:
@@ -53,6 +53,6 @@ def continuer():
             print("tornerai al menù principale tra " + str(countdown) + " secondi")
             countdown -= 1
             time.sleep(1)
-        atextgamestory.menù()
+        atextgamestory.menu()
 
 #SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
