@@ -7,8 +7,8 @@ import Capitolo_2
 
 Utility.saving_crea()
 #Utility.chapter_level()
-
 # STARTUP
+
 
 print("#######################################################################################################################################################################################################")
 time.sleep(2)
@@ -65,7 +65,6 @@ def menu():
     print("#####################################################################################################################################################################################################################\n")
 
     # MENU variabile di inserimento comando a opzioni numeriche
-    global comando
     comando = input("")
     if comando == "E":
         sys.exit(0)
@@ -73,11 +72,11 @@ def menu():
         Capitolo_1.scena1()
     elif comando == "2":
         Utility.chapter_level()
-        #Capitolo_2.scena2()
-   # Cancellazione dati
+      # Cancellazione dati
     elif comando == "999":
         delete = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
         if delete == "Si" or "si" or "SI":
+            #Rimozione e rimpiazzo
             os.remove("saving.txt")
             print("\n\nDATI RIMOSSI CON SUCCESSO!")
             Utility.saving_crea()

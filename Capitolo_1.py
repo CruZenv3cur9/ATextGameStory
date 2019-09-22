@@ -34,13 +34,15 @@ def scena1():
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(0.007)
-    # aggiunta del valore 1
-    global salvataggio_progressi
-        # richiamo motore di saving
+    # richiamo motore di saving
+    Utility.gioco["livello"] = 1
     Utility.saving()
+
+
+
     domanda = input ("premi 1 per   continuare con il prossimo episodio oppure premi INVIO per tornare al menù")
 
     if domanda == "1":
-        Capitolo_2.scena2()
+       Capitolo_2.scena2()
     else:
         atextgamestory.menu()

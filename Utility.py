@@ -1,46 +1,50 @@
 import atextgamestory, sys, time, Capitolo_2
 import os.path
+import json
 from os import path
 
-# motore di salvataggio
-salvataggio_progressi = []
+
+
+gioco = {"livello": 0, "frase": 3}
+
+file_salva = "saving.txt"
+
 def saving_crea():
-    if path.exists("saving.txt") == True:
-       print()
+    if path.exists(file_salva):
+        with open(file_salva, 'r') as f:
+            gioco = json.load(f)
+        ##todo
+        print(gioco)
+
     else:
-        saving = open("saving.txt", "w")
-        saving.write(str())
-        saving.close()
-# METTERE A POSTO STA ROBA
+        gioco = {"livello":0, "frase":3}
+        with open(file_salva, 'w') as f:
+            json.dump(gioco, f)
+
+        #Todo
+        print(gioco)
+
+        # METTERE A POSTO STA ROBA
 def saving():
-    saving = open("saving.txt", "w")
-    saving.write(str(salvataggio_progressi + 1))
-    saving.close()
+    with open(file_salva, 'w') as f:
+        json.dump(gioco, f)
     print("SV-OK")
-print()
+    #todo
+    print(gioco)
+
+
+pass
+
 
 def chapter_level():
-    global salvataggio_progressi
-    progressi = open("saving.txt", "r")
-    salvataggio_progressi = progressi
-    if "0" in salvataggio_progressi and atextgamestory.menu().comando == "2":
-        print("Non hai ancora sbloccato questo livello!")
-        # countdown
-        countdown = 3
-        print("")
-        time.sleep(2)
-        while countdown != 0:
-            print("tornerai al menù principale tra " + str(countdown) + " secondi")
-            countdown -= 1
-            time.sleep(1)
-        atextgamestory.menu()
-    else:
-        Capitolo_2.scena2()
-print()
+     progressi = open("saving.txt", "r")
 
 
 
-#def continuer():
+
+pass
+
+# def continuer():
 #    global salvataggio_progressi
 #    if "1" in salvataggio_progressi:
 #              Capitolo_2.scena2()
@@ -56,4 +60,4 @@ print()
 #            time.sleep(1)
 #        atextgamestory.menu()
 #
-#SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
+# SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
