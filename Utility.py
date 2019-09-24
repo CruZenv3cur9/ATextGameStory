@@ -4,28 +4,42 @@ import json
 from os import path
 
 
-
 gioco = {"livello": 0, "frase": 3}
-
+episodi = {"ep1" : "Capitolo1.txt", "ep2" : "Capitolo2.txt"}
 file_salva = "saving.txt"
+ep1 = "Capitolo1.txt"
+
+def loading():
+
+    with open(episodi["ep1"], 'r') as f:
+        ep1 = json.load(f)
+    f.close()
+
+
+
 
 def saving_crea():
+
     if path.exists(file_salva):
         with open(file_salva, 'r') as f:
             gioco = json.load(f)
-        ##todo
+        f.close()
+
+        #todo
         print(gioco)
 
     else:
         gioco = {"livello":0, "frase":3}
         with open(file_salva, 'w') as f:
             json.dump(gioco, f)
+        f.close()
 
         #Todo
         print(gioco)
 
         # METTERE A POSTO STA ROBA
 def saving():
+
     with open(file_salva, 'w') as f:
         json.dump(gioco, f)
     print("SV-OK")
@@ -37,12 +51,8 @@ pass
 
 
 def chapter_level():
-     progressi = open("saving.txt", "r")
 
-
-
-
-pass
+    pass
 
 # def continuer():
 #    global salvataggio_progressi

@@ -4,6 +4,7 @@ import Utility
 
 # INIZIO DEL SECONDO EPISODIO
 def scena2():
+
     global frase1
     frase1 = "ciaoooooo"
      # writing

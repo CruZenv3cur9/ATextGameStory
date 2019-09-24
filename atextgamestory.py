@@ -3,12 +3,12 @@ import pygame
 import Utility
 import Capitolo_1
 import Capitolo_2
+import json
 # motore di salvataggio
 
 Utility.saving_crea()
 #Utility.chapter_level()
 # STARTUP
-
 
 print("#######################################################################################################################################################################################################")
 time.sleep(2)
@@ -53,6 +53,7 @@ for char in titolo:
 # MENU di gioco
 
 def menu():
+
     print("\n\n\n\n\n                                                   MENÚ")
     time.sleep(0.2)
     print("            <G                            <GIOCA>                      ")
@@ -60,13 +61,16 @@ def menu():
     print("            <E                            <ESCI>                       ")
     time.sleep(0.5)
     print("            <1                           <EPISODIO-1>                     ")
+#if Utility.gioco["livello"] >= 1:
     print("            <2                           <EPISODIO-2>                     ")
+# else:
+# pass
     print("\n            <999                         <ELIMINA DATI DI SALVATAGGIO>                 ")
     print("#####################################################################################################################################################################################################################\n")
 
     # MENU variabile di inserimento comando a opzioni numeriche
     comando = input("")
-    if comando == "E":
+    if comando == "E" or "e":
         sys.exit(0)
     elif comando == "1":
         Capitolo_1.scena1()
