@@ -3,19 +3,18 @@ import os.path
 import json
 from os import path
 
+azioni = {"movimento": ["n", "e", "s", "o"], "guardare": ["guarda", "osserva", "controlla"]}
 
 gioco = {"livello": 0, "frase": 3}
-episodi = {"ep1" : "Capitolo1.txt", "ep2" : "Capitolo2.txt"}
+episodi = {"ep1": "Capitolo1.txt", "ep2": "Capitolo2.txt"}
 file_salva = "saving.txt"
 ep1 = "Capitolo1.txt"
 
-def loading():
-
-    with open(episodi["ep1"], 'r') as f:
-        ep1 = json.load(f)
-    f.close()
-
-
+#def loading():
+#
+#    with open(episodi["ep1"], 'r') as f:
+#        ep1 = json.load(f)
+#    f.close()
 
 
 def saving_crea():

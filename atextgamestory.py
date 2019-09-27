@@ -69,8 +69,8 @@ def menu():
     print("#####################################################################################################################################################################################################################\n")
 
     # MENU variabile di inserimento comando a opzioni numeriche
-    comando = input("")
-    if comando == "E" or "e":
+    comando = input()
+    if comando == "E":
         sys.exit(0)
     elif comando == "1":
         Capitolo_1.scena1()
