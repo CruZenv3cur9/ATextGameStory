@@ -14,4 +14,3 @@ def scena2():
         time.sleep(0.1)
 
 
-scena2()

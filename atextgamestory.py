@@ -7,7 +7,6 @@ import json
 # motore di salvataggio
 
 Utility.saving_crea()
-#Utility.chapter_level()
 # STARTUP
 
 print("#######################################################################################################################################################################################################")
@@ -71,11 +70,12 @@ def menu():
     # MENU variabile di inserimento comando a opzioni numeriche
     comando = input()
     if comando == "E":
+        print("Come vuoi tu capo! ;)")
         sys.exit(0)
     elif comando == "1":
-        Capitolo_1.scena1()
+        Capitolo_1.prologo()
     elif comando == "2":
-        Utility.chapter_level()
+        menu()
       # Cancellazione dati
     elif comando == "999":
         delete = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
@@ -114,7 +114,7 @@ def menu():
 
         collegamento = input("premi invio per procedere all' episodio successivo")
         if collegamento == "":
-            Capitolo_1.scena1()
+            Capitolo_1.prologo()
 
     else:
         print("\nSi è verificato un problema!\n\n")
