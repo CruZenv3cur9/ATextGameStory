@@ -3,19 +3,22 @@ import os.path
 import json
 from os import path
 
-azioni = {"movimento": ["n", "e", "s", "o"], "guardare": ["guarda", "osserva", "controlla"]}
-
-gioco = {"livello": 0, "frase": 3}
-episodi = {"ep1": "Capitolo1.txt", "ep2": "Capitolo2.txt"}
+gioco = {"livello": 0, "frase": 0, "stanza": 0}
 file_salva = "saving.txt"
-ep1 = "Capitolo1.txt"
 
-#def loading():
-#
-#    with open(episodi["ep1"], 'r') as f:
-#        ep1 = json.load(f)
-#    f.close()
+azioni = {"movimento": ["n", "e", "s", "o"],
+          "guardare": ["guarda", "osserva", "controlla"],
+          "prendere": ["prendi", "afferra"],
+          "posare": ["posa", "lascia", "tira"],
+          "usare": ["usa", "utilizza"],
+          "esci": ["esci","exit","chiudi"],
+          "insultare": ["vaffanculo", "scemo", "coglione", "bastardo", "stupido", "stronzo", "idiota"]}
+zaino=["zaino","torcia"]
 
+def morte():
+    print("\n\n\nAHAHAHAHAH. Sei morto...\n...scemo!")
+    time.sleep(3)
+    sys.exit(0)
 
 def saving_crea():
 
@@ -28,7 +31,7 @@ def saving_crea():
         print(gioco)
 
     else:
-        gioco = {"livello":0, "frase":3}
+        gioco = {"livello": 0, "frase": 0, "stanza": 0}
         with open(file_salva, 'w') as f:
             json.dump(gioco, f)
         f.close()
@@ -48,25 +51,61 @@ def saving():
 
 pass
 
+# ---------------------------------------------------------------------------------------
 
-def chapter_level():
+def my_input(cTxt="", aLuogo=[]):
+    while True:
+        cInp = input(cTxt).lower()
+        aAzio = cInp.split()
+        try:
+            cCmd = aAzio[0]
+        except IndexError:
+            print("IndexError... Scrivi qualcosa pls...")
+            cCmd = "errore"
+        xAzio=""
+        xOgg=""
+        if cCmd in azioni["movimento"]:
+           xAzio = "movimento"
+        elif cCmd in azioni["guardare"]:
+           xAzio = "guardare"
+        elif cCmd in azioni["prendere"]:
+           xAzio = "prendere"
+        elif cCmd in azioni["posare"]:
+           xAzio = "posare"
+        elif cCmd in azioni["usare"]:
+           xAzio = "usare"
+        elif cCmd in azioni["esci"]:
+            xAzio = "esci"
+        elif cCmd in azioni["insultare"]:
+            xAzio = "insultare"
+            print(str((cCmd).upper()) + "!?\n")
+            time.sleep(1)
+            print(str((cCmd).upper()) + " A ME!?")
+            time.sleep(1)
+            print("Ti faccio vedere io adesso...")
+            time.sleep(3)
+            morte()
+        else:
+            print("Non ho capito.")
 
-    pass
+        for ogg in aAzio:
+            if ogg in zaino:
+                xOgg=ogg
+                if xAzio=="posare":
+                    aLuogo.append(ogg)
+                    zaino.remove(ogg)
+                    print("Hai lasciato: \"" + ogg +"\".")
+                break
+            elif ogg in aLuogo:
+                xOgg=ogg
+                if xAzio=="prendere":
+                    zaino.append(ogg)
+                    aLuogo.remove(ogg)
+                    print("Hai preso: \"" + ogg +"\".")
+                break
 
-# def continuer():
-#    global salvataggio_progressi
-#    if "1" in salvataggio_progressi:
-#              Capitolo_2.scena2()
-#    else:
-#        print("\nprima di poter accedere all'episodio 2 devi aver completato l'episodio 1")
-#        #countdown
-#        countdown = 3
-#        print("")
-#        time.sleep(2)
-#        while countdown != 0:
-#            print("tornerai al menù principale tra " + str(countdown) + " secondi")
-#            countdown -= 1
-#            time.sleep(1)
-#        atextgamestory.menu()
-#
-# SETUPPARE COLLEGAMENTO TRA LISTE DI FILE DIVERSI
+
+        if len(xAzio)!=0:
+            return {"azione":xAzio, "comando":cCmd, "oggetto":xOgg}
+
+#- FINE LIBRERIA ----------------------------------------------------------------------------
