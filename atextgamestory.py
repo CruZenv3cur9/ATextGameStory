@@ -78,8 +78,8 @@ def menu():
         menu()
       # Cancellazione dati
     elif comando == "999":
-        delete = input("SEI SICURO? SCRIVI \"Si\" SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
-        if delete == "Si" or "si" or "SI":
+        delete = input("SEI SICURO? SCRIVI ESATTAMENTE \"Si\" (case sensitive) SE CONFERMI.\nNON POTRAI MAI PIU' RECUPERARE I TUOI DATI SE PROCEDI.")
+        if delete == "Si":
             #Rimozione e rimpiazzo
             os.remove("saving.txt")
             print("\n\nDATI RIMOSSI CON SUCCESSO!")
@@ -93,9 +93,12 @@ def menu():
                 countdown -= 1
                 time.sleep(1)
             menu()
+        elif delete != "Si":
+            print("Annullo l'operazione...")
+            time.sleep(1)
+            menu()
         else:
             menu()
-
         # inizio del gioco (scena introduttiva)
     elif comando == "G":
         print("")

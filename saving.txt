@@ -1,1 +1,1 @@
-{"livello": 1, "frase": 3}
+{"livello": 0, "frase": 0, "stanza": 0}

@@ -1,4 +1,5 @@
-import atextgamestory, Utility, pygame, time, sys
+import atextgamestory, Utility, pygame
+import time, sys
 import Capitolo_2
 
 
@@ -33,33 +34,68 @@ def prologo():
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(0.007)
-    Stanza1()
+    Intro_tutorial()
+
+def Intro_tutorial():
+    time.sleep(3)
+    print("""Ciao!
+    Benvenuto a questo tutorial!
+    Ora ti insegnerò alcuni comandi base!
+    Ad esempio per spostarti usa l\'iniziale dei quattro punti cardinali:(n, e, s, o).
+    Prova!""")
+    tutorial = input("Che cosa faccio?\n-->").lower()
+    if tutorial == "n" or  tutorial =="e" or  tutorial =="s" or  tutorial =="o":
+        print("\nCi sai fare con le lettere!")
+        pass
+    else:
+        print("Non ho capito. E neanche tu. Te lo ripeto...\n")
+        Intro_tutorial()
+    print("\nBravo! C'è molta nebbia ma puoi provare a cercare qualcosa con il comando \"guarda\"!Prova a usare questo comando!")
+    tutorial = input("Che cosa faccio?\n-->").lower()
+    if tutorial == "guarda":
+        print("\nTi ho detto che c'è la nebbia!")
+        time.sleep(2)
+        print("OK. Stavolta ti aiuto io... C'è uno zaino lì per terra.")
+        pass
+    else:
+        print("What?! Ripartiamo da capo...\n")
+        Intro_tutorial()
+    print("\nOra prova a prendere quello zaino che c'è li per terra! Devi dire \"prendi zaino\"")
+    tutorial = input("Che cosa faccio?\n-->").lower()
+    if tutorial == "prendi zaino":
+        print("\nAbbiamo a che fare con un genio, vedo...\nBene! Il tutorial è finito! Ora comincia la vera avventura.")
+        time.sleep(1)
+        print("\n\nTeletrasporto a caso nel mondo in corso...")
+        Tutorial1()
+    else:
+        print("IMPEGNATI RECLUTA! Avevi solo da non sbagliare...\n")
+        Intro_tutorial()
 
 
 oggetti1 = ["mela", "pera"]
 
-
-def Stanza1():
-    # STANZA 1
-    def st_input_1():
+def Tutorial1():
+    # TUTORIAL 1
+    print("\n\n")
+    def tut_input_1():
         bivio = Utility.my_input("\n  1 Che cosa faccio?\n-->", oggetti1)
         if bivio["azione"] == "movimento":
             if bivio["comando"] == "e":
                 print("Vai verso est.")
-                Stanza2()
+                Tutorial2()
             elif bivio["comando"] == "s":
                 print("Vai verso sud.")
-                Stanza3()
+                Tutorial3()
             else:
                 print("Non puoi andare qui.")
-                st_input_1()
+                tut_input_1()
         elif bivio["azione"] == "guardare":
             print("Vedi un passaggio a est ed una nebbia fitta provenire da sud...")
-            st_input_1()
+            tut_input_1()
         else:
-            st_input_1()
+            tut_input_1()
 
-    st_input_1()
+    tut_input_1()
 
     # richiamo motore di saving
 
@@ -67,86 +103,86 @@ def Stanza1():
 # Utility.gioco["frase"] = 1
 # Utility.saving()
 
-# STANZA 2
+# TUTORIAL 2
 
-oggetti2 = ["quadro"]
+oggetti2 = ["chiave"]
 
 
-def Stanza2():
+def Tutorial2():
     print("Sei nella seconda stanza.")
 
-    def st_input_2():
+    def tut_input_2():
         bivio = Utility.my_input("\n 2  Che cosa faccio?\n-->", oggetti2)
         if bivio["azione"] == "movimento":
             if bivio["comando"] == "o":
                 print("Vai verso ovest.")
-                Stanza1()
+                Tutorial1()
             elif bivio["comando"] == "s":
                 print("Vai verso sud.")
-                Stanza4()
+                Tutorial4()
             else:
                 print("Non puoi andare qui.")
-                st_input_2()
+                tut_input_2()
         elif bivio["azione"] == "guardare":
             print("Vedi un passaggio a ovest ed una nebbia fitta provenire da sud...")
-            st_input_2()
+            tut_input_2()
         else:
-            st_input_2()
+            tut_input_2()
 
-    st_input_2()
+    tut_input_2()
 
 
-# STANZA 3
+# TUTORIAL 3
 
 oggetti3 = []
 
 
-def Stanza3():
+def Tutorial3():
     print("Sei nella terza stanza.")
 
-    def st_input_3():
+    def tut_input_3():
         bivio = Utility.my_input("\n 3  Che cosa faccio?\n-->", oggetti3)
         if bivio["azione"] == "movimento":
             if bivio["comando"] == "n":
                 print("Vai verso nord.")
-                Stanza1()
+                Tutorial1()
             elif bivio["comando"] == "e":
                 print("Vai verso est.")
-                Stanza4()
+                Tutorial4()
             else:
                 print("Non puoi andare qui.")
-                st_input_3()
+                tut_input_3()
         elif bivio["azione"] == "guardare":
             print("Vedi la navicella a nord e un buco ad est...")
-            st_input_3()
+            tut_input_3()
 
-    st_input_3()
+    tut_input_3()
 
 
-# STANZA 4
+# TUTORIAL 4
 
 oggetti4 = ["sasso"]
 
 
-def Stanza4():
+def Tutorial4():
     print("Sei nella quarta stanza.")
 
-    def st_input_4():
+    def tut_input_4():
         bivio = Utility.my_input("\n 4  Che cosa faccio?\n-->", oggetti4)
         if bivio["azione"] == "movimento":
             if bivio["comando"] == "n":
                 print("Vai verso nord.")
-                Stanza2()
+                Tutorial2()
             elif bivio["comando"] == "o":
                 print("Vai verso ovest.")
-                Stanza3()
+                Tutorial3()
             else:
                 print("Non puoi andare qui.")
-                st_input_4()
+                tut_input_4()
         elif bivio["azione"] == "guardare":
             print("Vedi un grosso masso ad nord e un animale ad ovest...1")
-            st_input_4()
+            tut_input_4()
 
-    st_input_4()
+    tut_input_4()
 
 

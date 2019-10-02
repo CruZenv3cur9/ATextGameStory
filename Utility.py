@@ -12,8 +12,8 @@ azioni = {"movimento": ["n", "e", "s", "o"],
           "posare": ["posa", "lascia", "tira"],
           "usare": ["usa", "utilizza"],
           "esci": ["esci","exit","chiudi"],
-          "insultare": ["vaffanculo", "scemo", "coglione", "bastardo", "stupido", "stronzo", "idiota"]}
-zaino=["zaino","torcia"]
+          "insultare": ["vaffanculo", "scemo", "coglione", "cretino", "bastardo", "stupido", "stronzo", "idiota", "pezzo di merda"]}
+zaino=["torcia"]
 
 def morte():
     print("\n\n\nAHAHAHAHAH. Sei morto...\n...scemo!")
